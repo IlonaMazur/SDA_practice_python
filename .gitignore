@@ -1,0 +1,4 @@
+venv_dir/
+. idea
+__pycache__/
+*.pyc
