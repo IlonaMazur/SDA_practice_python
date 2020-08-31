@@ -1,16 +1,30 @@
-# def dayByNumber(weekday):
-#    if weekday == 0:
-#        retyrn "Monday"
-#    if weekday ==
-
-
 # v2
-
 import calendar
 
 list(calendar.day_name)
 
 print(calendar.day_name[3])
+
+
+# v1
+def day_by_number(weekday: int) -> str:
+    if weekday == 1:
+        return "Monday"
+    if weekday == 2:
+        return "Tuesday"
+    if weekday == 3:
+        return "Wednesday"
+    if weekday == 4:
+        return "Thursday"
+    if weekday == 5:
+        return "Friday"
+    if weekday == 6:
+        return "Saturday"
+    if weekday == 7:
+        return "Sunday"
+
+
+print(day_by_number(6))
 
 # v3
 DayOfTheWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
