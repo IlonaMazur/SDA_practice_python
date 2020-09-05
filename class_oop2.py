@@ -1,22 +1,22 @@
 class Person:
-    def __init__(self, name: str, s_name: str, b_date: int):
+    def __init__(self, name: str, s_name: str, b_date: int) -> str:
         self._name = name
         self._s_name = s_name
-        self._b_date = 0
+        self._b_date = b_date
 
     @property
-    def set_name(self, x):
-        self._name = x
+    def set_name(self, Adam):
+        self._name = Adam
 
-    def set_surname(self, y):
-        self._s_name = y
+    def set_surname(self, Kowalski):
+        self._s_name = Kowalski
 
-    def set_birth_date(self, z):
-        self._b_date = z
+    def set_b_date(self, March):
+        self._b_date = March
 
 
 def main():
-    print()
+    print(f" Mr {name}")
 
 
 if __name__ == "__main__":
