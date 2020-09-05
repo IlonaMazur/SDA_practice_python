@@ -1,0 +1,42 @@
+def check_file_wrapper(func):
+    def inner(*args, **kwargs):
+        path = ''
+        if len(args) > 0:
+            path = args[0]
+        elif kwargs.get('source', ''):
+            path = kwargs.get('source')
+        import os
+        if path and os.path.exists(path):  # jesli sciezka jest nie pusta i sciezka istnieje
+            print('File exists')
+        elif path:  # jeseli argment istnieje
+            print('path not exist - file will be created')
+            from pathlib import Path
+            Path(path).touch()  # tworzenie pliku
+        else:
+            print('no argument given')
+            import sys
+            sys.exit(1)
+        # print(args)
+        return func(*args, **kwargs)
+
+    return inner
+
+
+@check_file_wrapper
+# def writing_file(source: str, lines: list):
+def writing_file(source: str):
+    with open(source, 'r') as fd:  # file descriptor
+        # for line in lines:
+        #     fd.write(line)
+        fd.read()
+
+
+def main():
+    writing_file(source='./test_writtingfle')
+    # writing_file()# z tym no arguments given
+    # writing_file(source='./test_writingfile', lines=[])
+    # writing_file(source='./test_writingfile')  # jak daje pierwsze jako arggument to drigie tez - source= i lines=
+
+
+if __name__ == "__main__":
+    main()
