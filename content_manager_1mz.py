@@ -10,26 +10,21 @@ def csv_writer():
 #       yield row
 
 
-class OpenFile():
-    lala = [('IDK', 'what', 'am', 'I', 'doing'),
-            ('bits', 'and', 'bobs')]
-    with open('lala.txt', 'w') as la:
-        la.write(f" IDK if it works{lala}")
+class OpenFile:
 
     def __init__(self, name):
         self.name = name
 
     def __enter__(self):
+        print(f" opening file {'./lala.txt'}")
         self.file = open('./lala.txt', 'w')
         return self.file
 
-    print(f" opening file {'./lala.txt'}")
 
-
-def __exit__(self, exc_type, exc_val, exc_tb):
-    if self.file:
+    def __exit__(self, *args):
+        print(f" closing file {'./lala.txt'}")
         self.file.close()
-    print(f" closing file {'./lala.txt'}")
+
 
 
 def main():
